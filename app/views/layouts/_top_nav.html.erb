@@ -41,6 +41,23 @@
             <li><%= link_to 'Products',  [:admin, :products] %></li>
           </ul>
         </li>
+
+        <% if current_user%>
+          <li class="nav-item">
+            Signed in as <%= current_user.name %>
+          </li>
+          <li>
+            <%= link_to "Logout", [:session, :delete] %>
+          </li>  
+          <% else %>
+          <li class="nav-item">
+            <%= link_to 'Login', new_session_path %>
+          </li>
+          <li>
+            <%= link_to 'Signup', new_user_path %>
+          </li>  
+        <% end %>
+        
         <li>
           <%= link_to cart_path do %>
             <%= fa_icon "shopping-cart" %> My Cart (<%= cart.size %>)
