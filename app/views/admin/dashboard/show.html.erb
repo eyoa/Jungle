@@ -1,9 +1,14 @@
 <h1>Admin Dashboard</h1>
-<div>
+<h3>Total Products</h3>
+<div class="alert alert-info">
   <%= pluralize(@total_products, 'items')%>
   are in the store.
 </div>
-<div>
+<h3>Total categories</h3>
+<div class="alert alert-info">
   <%= pluralize(@total_categories, 'category')%>
   of products in store.
+</div>
+<div class="">
+  <%= link_to 'Manage Products', admin_products_path %>
 </div>
