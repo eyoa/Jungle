@@ -56,18 +56,6 @@ ActiveRecord::Schema.define(version: 20210303210743) do
 
   add_index "products", ["category_id"], name: "index_products_on_category_id", using: :btree
 
-<<<<<<< HEAD
-=======
-  create_table "sales", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "percent_off"
-    t.date     "starts_on"
-    t.date     "ends_on"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
->>>>>>> feature/product-specs
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
