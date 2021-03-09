@@ -36,7 +36,7 @@ RSpec.describe User, type: :model do
     end
 
     it 'emails must be unique (not case sensitive)' do
-      existing_user = User.create(
+      User.create(
         first_name: 'felix',
         last_name: 'cat', 
         email: 'test@test.com',
@@ -84,7 +84,7 @@ RSpec.describe User, type: :model do
 
   describe '.authenticate_with_credentials' do
     it 'returns user if successful' do
-      user = User.create(
+      User.create(
         first_name: 'first',
         last_name: 'last',
         email: 'test@testing.com',
@@ -92,12 +92,12 @@ RSpec.describe User, type: :model do
         password_confirmation: '123456'     
       )
 
-      expect(user.authenticate_with_credentials('test@testing.com', '123456')).to be_a User
+      expect(User.authenticate_with_credentials('test@testing.com', '123456')).to be_a User
 
     end
 
     it 'returns nil if not successful' do
-      user = User.create(
+      User.create(
         first_name: 'first',
         last_name: 'last',
         email: 'test@testing.com',
@@ -105,11 +105,11 @@ RSpec.describe User, type: :model do
         password_confirmation: '123456'     
       )
 
-      expect(user.authenticate_with_credentials('test@testing.com', '654321')).to be_nil
+      expect(User.authenticate_with_credentials('test@testing.com', '654321')).to be_nil
     end
 
     it 'is successful and returns user if there are spaces before/after their email' do
-      user = User.create(
+      User.create(
         first_name: 'first',
         last_name: 'last',
         email: 'test@testing.com',
@@ -117,12 +117,12 @@ RSpec.describe User, type: :model do
         password_confirmation: '123456'     
       )
 
-      expect(user.authenticate_with_credentials('  test@testing.com ', '123456')).to be_a User
+      expect(User.authenticate_with_credentials('  test@testing.com ', '123456')).to be_a User
 
     end
 
     it 'is successful and returns user if email is in different case' do
-      user = User.create(
+      User.create(
         first_name: 'first',
         last_name: 'last',
         email: 'test@testing.com',
@@ -130,7 +130,7 @@ RSpec.describe User, type: :model do
         password_confirmation: '123456'     
       )
 
-      expect(user.authenticate_with_credentials('test@tEstiNg.com', '123456')).to be_a User
+      expect(User.authenticate_with_credentials('test@tEstiNg.com', '123456')).to be_a User
 
     end
 
