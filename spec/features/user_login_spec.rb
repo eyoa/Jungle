@@ -21,7 +21,7 @@ RSpec.feature "UserLogins", type: :feature, js: true do
 
     click_on 'Submit'
 
-    # expect(page).to have_content('Products')
+    expect(page).to have_content('Products')
     expect(page).to have_content('Welcome bugs!')
     save_screenshot
   end
