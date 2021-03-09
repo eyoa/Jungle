@@ -3,8 +3,10 @@ class ReceiptMailer < ApplicationMailer
 
   def receipt_email(order)
     # raise order.inspect
-    # @user = User.find_by(email: order.email)
-    @user = User.first
+    @user = User.find_by(email: order.email)
+    if !@user
+      @user = User.first
+    end
     
     @order = order
 
