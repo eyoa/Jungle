@@ -19,8 +19,4 @@ class User < ActiveRecord::Base
     user
   end
 
-  # def self.user_details_by_email(email) 
-  #   User.find_by(email: email)
-  # end
-
 end
