@@ -147,15 +147,19 @@ end
 
 ## Reviews
 
+
 puts "Re-creating Reviews ..."
 Review.destroy_all
+
+
 20.times do
-  Review.create!({
-    product_id: rand(1..Product.count),
+  rand_product = Product.find_by id: rand(1..Product.count)
+  rand_product.reviews.create!({
     user_id: rand(1..User.count),
     description: Faker::Hipster.paragraph(2),
     rating: rand(1..5)
   })
 end
+
 
 puts "DONE!"

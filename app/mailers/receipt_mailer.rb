@@ -2,7 +2,7 @@ class ReceiptMailer < ApplicationMailer
   default from: "no-reply@jungle.com"
 
   def receipt_email(order)
-    # raise order.inspect
+
     @user = User.find_by(email: order.email)
     if !@user
       @user = User.first
