@@ -34,25 +34,27 @@
       <div class="col-sm-8">
         <h3>Reviews</h3>
         <br>
-        <%= form_for [@product, Review.new] do |f| %>
-          <div class="form-row align-items-center">
-              <div class="col-auto">
-                <%= f.label :rating, class: 'form-label'%>
-                <%= f.select :rating, [1,2,3,4,5], {include_blank: true}, class: 'custom-select mr-2' %>
-              </div>
-              <div class="col-auto">
-                <%= f.label :description, class: 'form-label'%>
-                <%= f.text_area :description, class: 'form-control mb-2'%>
-              </div>
-          </div>
-          <br>
-          <%= f.submit 'Post Review', class: 'btn btn-primary' %>
-        <% end %>
 
+        <% if !current_user.nil?%>
+          <%= form_for [@product, Review.new] do |f| %>
+            <div class="form-row align-items-center">
+                <div class="col-auto">
+                  <%= f.label :rating, class: 'form-label'%>
+                  <%= f.select :rating, [1,2,3,4,5], {include_blank: true}, class: 'custom-select mr-2' %>
+                </div>
+                <div class="col-auto">
+                  <%= f.label :description, class: 'form-label'%>
+                  <%= f.text_area :description, class: 'form-control mb-2'%>
+                </div>
+            </div>
+            <br>
+            <%= f.submit 'Post Review', class: 'btn btn-primary' %>
+          <% end %>
+      <% end %>
 
         <br>
         <dl class="dl-horizontal">
-          <% @product.reviews.each do |review| %>
+          <% @product.reviews.reverse.each do |review| %>
             <%= render 'review', review: review %>
           <% end %>
         </dl>
