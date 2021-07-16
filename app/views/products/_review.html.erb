@@ -4,8 +4,9 @@
 <dd><%= review.created_at.strftime("%B %e, %Y") %></dd>
 <dt>Review: </dt>
 <dd><%= review.description %></dd>
- <% if current_user.id == review.user_id %>
-  <%= button_to "delete", product_review_path(id: review.id, product_id: review.product_id), method: "delete" %>
- <% end %>
+
+ <%# if current_user.id == review.user_id %>
+  <%# #button_to "delete", product_review_path(id: review.id, product_id: review.product_id), method: "delete" %>
+ <%# #end %>
 
 <br>
