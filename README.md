@@ -24,3 +24,10 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 - Rails 4.2 [Rails Guide](http://guides.rubyonrails.org/v4.2/)
 - PostgreSQL 9.x
 - Stripe
+
+## Final Product
+
+!["Home Page"](https://github.com/eyoa/Jungle/blob/master/public/img/JungleHome.png?raw=true)
+!["Product Details"](https://github.com/eyoa/Jungle/blob/master/public/img/Product.png?raw=true)
+!["Cart"](https://github.com/eyoa/Jungle/blob/master/public/img/Cart.png?raw=true)
+!["Stripe](https://github.com/eyoa/Jungle/blob/master/public/img/Stripe.png?raw=true)
